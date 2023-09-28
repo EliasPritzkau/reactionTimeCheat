@@ -6,6 +6,8 @@
 #include <QScreen>
 #include <QCursor>
 #include <QTest>
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -22,7 +24,7 @@ private:
     QPixmap pic ;
     QGraphicsScene *scene = nullptr;
     Ui::Widget *ui;
-    QScreen *screenshot;
+    QScreen *desktop;
 
 private slots:
     void m_run();
