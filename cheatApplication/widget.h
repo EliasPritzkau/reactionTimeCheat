@@ -24,14 +24,16 @@ private:
     QPixmap pic ;
     QGraphicsScene *scene = nullptr;
     Ui::Widget *ui;
-    QScreen *desktop;
+    QScreen *desktop;;
+    HWND *HWND_desktop;
 
 private slots:
     void m_run();
     void m_makeScreenshot();
-    void printColor();
+    QRgb printColor();
     void m_makeDebugWindow();
-    void m_makeClick();
+    void m_makeKlick(int y, int x);
+    void quit();
 
 };
 #endif // WIDGET_H
