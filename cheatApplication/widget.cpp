@@ -35,7 +35,7 @@ void Widget::m_run()
 void Widget::m_makeScreenshot()
 {
 
-    pic = desktop->grabWindow(0, 200,200,10,10).toImage();
+    pic = desktop->grabWindow(0, 200,200,2,2).toImage();
 
     if(QColor(m_printColor()).green() == 219)
         m_makeKlick(200,200);
@@ -57,7 +57,6 @@ void Widget::m_makeKlick(int y, int x)
     SetCursorPos(x, y);
     mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0);
     mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0);
-    Sleep(500);
     qDebug()<< "Klicked";
     mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0);
     mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0);
