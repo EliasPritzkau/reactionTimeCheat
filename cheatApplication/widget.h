@@ -21,17 +21,14 @@ public:
     ~Widget();
     void run();
 private:
-    QPixmap pic ;
-    QGraphicsScene *scene = nullptr;
+    QImage pic ;
     Ui::Widget *ui;
-    QScreen *desktop;;
-    HWND *HWND_desktop;
+    QScreen *desktop;
 
 private slots:
     void m_run();
     void m_makeScreenshot();
-    QRgb printColor();
-    void m_makeDebugWindow();
+    QRgb m_printColor();
     void m_makeKlick(int y, int x);
     void quit();
 
