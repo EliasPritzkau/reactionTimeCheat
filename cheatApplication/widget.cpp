@@ -10,7 +10,6 @@ Widget::Widget(QWidget *parent)
 
     //QPixmap pic =QPixmap("F:\\FCode\\Projects\\Q2 Projects\\cheatApplication\\testPicture.png");
     desktop= QApplication::primaryScreen();
-
     m_run();
 
 }
@@ -25,8 +24,10 @@ void Widget::m_run()
 {
     for(int i = 0; i < 10000; i-=-1)
     {
+        qDebug() << "is running";
         m_makeScreenshot();
     }
+
     quit();
 
 }
@@ -35,9 +36,8 @@ void Widget::m_makeScreenshot()
 {
 
     pic = desktop->grabWindow(0, 200,200,10,10).toImage();
-    if(pic.isNull())
-        qDebug() << "picture could not be loadet";
-    else if(QColor(m_printColor()).green() == 219)
+
+    if(QColor(m_printColor()).green() == 219)
         m_makeKlick(200,200);
 
 
@@ -66,7 +66,9 @@ void Widget::m_makeKlick(int y, int x)
 
 void Widget::quit()
 {
-    QApplication::exit();
+    qDebug()<< "app quit";
+    this->close();
+
 }
 
 

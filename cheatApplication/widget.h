@@ -21,7 +21,7 @@ public:
     ~Widget();
     void run();
 private:
-    QImage pic ;
+    QImage pic;
     Ui::Widget *ui;
     QScreen *desktop;
 
